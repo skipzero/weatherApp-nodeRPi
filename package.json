@@ -1,0 +1,36 @@
+{
+  "name": "rpi-weather-nodejs",
+  "version": "0.0.1",
+  "description": "node.js version of switchdoc labs GroveWeatherPi",
+  "main": "app.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zerosquadron/weatherApp-nodeRPi.git"
+  },
+  "keywords": [
+    "nodejs",
+    "weather",
+    "open",
+    "source",
+    "raspberry",
+    "pi",
+    "rpi",
+    "environment",
+    "measurement",
+    "data",
+    "logging"
+  ],
+  "author": "Skip McBride",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zerosquadron/weatherApp-nodeRPi/issues"
+  },
+  "homepage": "https://github.com/zerosquadron/weatherApp-nodeRPi#readme",
+  "dependencies": {
+    "oled-i2c-bus": "^1.0.8",
+    "i2c": "^0.2.3"
+  }
+}
