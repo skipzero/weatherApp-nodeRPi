@@ -12,7 +12,8 @@ barometer.begin(function(err) {
 
     setInterval(function() {
         barometer.readPressureAndTemparature(function(err, pressure, temperature) {
-            console.info('barometer: ', pressure, temperature);
+          let ourPressure = pressure * 0.029529980164712;
+            console.info('barometer: ', ourPressure, temperature);
         });
     }, 1000);
 });
