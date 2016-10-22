@@ -11,16 +11,16 @@ barometer.begin(function(err) {
     }
 
     console.info('barometer running');
+console.log('BARA', Object.keys(barometer));
 
     setInterval(function() {
         barometer.readPressureAndTemparature(function(err, pressure, temperature) {
-
           // HectoPascal to Inches of Mercury
-          let ourPressure = pressure * 0.029529980164712;
+          let ourPressure = (pressure * 0.029529980164712).toFixed(2);
 
           //  Celcius to Farhenheight;
-          let ourTemp = temperature * 1.8 + 32).toFixed(2);
-            console.info('barometer: ', ourPressure, ourtemperature);
+          let ourTemp = (temperature * 1.8 + 32).toFixed(2);
+            console.info('barometer: ', ourPressure, ourTemp);
         });
     }, 1000);
 });
