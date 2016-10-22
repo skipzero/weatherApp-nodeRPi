@@ -30,7 +30,14 @@
   },
   "homepage": "https://github.com/zerosquadron/weatherApp-nodeRPi#readme",
   "dependencies": {
+    "htu21d-i2c": "^0.1.0",
+    "i2c": "^0.2.3",
+    "i2c-sensor-am2315": "^1.0.4",
+    "node-ads1x15": "^1.0.0",
+    "node-bmp280": "^0.1.2",
     "oled-i2c-bus": "^1.0.8",
-    "i2c": "^0.2.3"
+    "onoff": "^1.1.1",
+    "onoff-rotary": "^1.0.0",
+    "rtc-rpi": "^1.0.0"
   }
 }
