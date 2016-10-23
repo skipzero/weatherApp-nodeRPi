@@ -11,9 +11,9 @@ device.read(function(err, data) {
 	} 
 console.log(Object.keys(device));
 	console.log('Original in K');
-	console.log(data+'\n');
+	console.log(data);
 	console.log('Convert K to °F');
-	console.log(device.convertKelvinToFahrenheit(data)+'\n');
+	console.log(device.convertKelvinToFahrenheit(data));
 	console.log('Convert K to °C');
-//	console.log(device.convertKelvinToCelcius(data)+'\n');
+	console.log(device.convertKelvinToCelsius(data));
 });
