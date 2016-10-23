@@ -17,11 +17,11 @@ barometer.begin((err) => {
           //  Celcius to Farhenheight;
           let ourTemp = (temp * 1.8 + 32).toFixed(2);
           return {
-            '0': {
+            'cel': {
               'pressure': pres,
               'temparature': temp,
             },
-            '1': {
+            'far': {
               'pressure': ourPressure,
               'temparature': ourTemp,
             },
