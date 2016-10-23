@@ -1,26 +1,32 @@
 'use strict';
+const BMP280 = require('node-bmp280');
+const barometer = new BMP280();
 
-var BMP280 = require('node-bmp280');
-
-var barometer = new BMP280();
-
-barometer.begin(function(err) {
+//  'indoor' temp - barometer...
+barometer.begin((err) => {
     if (err) {
         console.info('error initializing barometer', err);
-        return;
+        return err;
     }
 
-    console.info('barometer running');
-console.log('BARA', Object.keys(barometer));
-
-    setInterval(function() {
-        barometer.readPressureAndTemparature(function(err, pressure, temperature) {
+    setInterval(() => {
+        barometer.readPressureAndTemparature((err, pres, temp) => {
           // HectoPascal to Inches of Mercury
-          let ourPressure = (pressure * 0.029529980164712).toFixed(2);
+          let ourPressure = (pres * 0.029529980164712).toFixed(2);
 
           //  Celcius to Farhenheight;
-          let ourTemp = (temperature * 1.8 + 32).toFixed(2);
-            console.info('barometer: ', ourPressure, ourTemp);
+          let ourTemp = (temp * 1.8 + 32).toFixed(2);
+          return {
+            '0': {
+              'pressure': pres,
+              'temparature': temp,
+            },
+            '1': {
+              'pressure': ourPressure,
+              'temparature': ourTemp,
+            },
+          }
+          console.info('barometer: ', ourPressure, ourTemp);
         });
     }, 1000);
 });
